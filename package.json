@@ -4,18 +4,15 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "build": "next build",
+    "build:static": "next build && next export",
     "start": "next start",
     "lint": "eslint"
   },
   "dependencies": {
-    "@types/multer": "^2.0.0",
-    "@types/sqlite3": "^5.1.0",
-    "multer": "^2.0.2",
     "next": "15.5.0",
     "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "sqlite3": "^5.1.7"
+    "react-dom": "19.1.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

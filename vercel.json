@@ -1,8 +1,6 @@
 {
-  "functions": {
-    "src/app/api/**/*.ts": {
-      "maxDuration": 30
-    }
-  },
-  "regions": ["hkg1"]
+  "regions": ["hkg1"],
+  "github": {
+    "silent": true
+  }
 }
