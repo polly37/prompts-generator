@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎨 AI提示词组合器
 
-## Getting Started
+一个基于 Next.js 的现代化网页应用，帮助用户创建完美的AI生成提示词。
 
-First, run the development server:
+## ✨ 功能特点
+
+- 📝 **用户输入框**: 输入基础提示词
+- 🎯 **多类别选择**: 包含11个不同类别的提示词标签
+- ✨ **实时预览**: 显示已选择的提示词
+- 🚀 **一键生成**: 自动组合生成最终提示词
+- 📋 **便捷复制**: 一键复制到剪贴板
+- 🎨 **美观界面**: 使用 Tailwind CSS 设计的现代化UI
+- 📱 **响应式设计**: 支持手机、平板、桌面端
+
+## 🏷️ 提示词分类
+
+1. **🎨 艺术风格** - 油画、水彩、素描、写实主义、印象派等
+2. **📐 构图** - 特写、全身照、侧面照、俯视角度等
+3. **🎨 色彩** - 暖色调、冷色调、高饱和度、柔和色彩等
+4. **💡 光影** - 自然光、金色时光、柔光、背光等
+5. **🤚 质感** - 丝绸、金属、玻璃、皮革质感等
+6. **🌟 氛围词** - 梦幻、神秘、优雅、浪漫等
+7. **🏞️ 背景描述** - 花园、室内、城市、海边背景等
+8. **👩 女子样貌** - 精致五官、大眼睛、瓜子脸等
+9. **💇 发型** - 长直发、波浪卷、盘发、编发等
+10. **👗 服饰** - 连衣裙、旗袍、和服、晚礼服等
+11. **💎 配饰** - 项链、耳环、手镯、发夹等
+
+## 🚀 快速开始
+
+### 环境要求
+
+- Node.js 18+ 
+- npm 或 yarn
+
+### 安装依赖
+
+```bash
+npm install
+# 或
+yarn install
+```
+
+### 启动开发服务器
 
 ```bash
 npm run dev
-# or
+# 或
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+打开 [http://localhost:3000](http://localhost:3000) 查看应用。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 构建生产版本
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+# 或
+yarn build
+```
 
-## Learn More
+### 启动生产服务器
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm start
+# 或
+yarn start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🛠️ 技术栈
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Framework**: Next.js 15
+- **Language**: TypeScript  
+- **Styling**: Tailwind CSS
+- **UI Components**: React Hooks
+- **Font**: Geist Sans & Geist Mono
 
-## Deploy on Vercel
+## 📝 使用方法
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. **输入基础提示词**: 在文本框中输入您的基础描述
+2. **选择标签**: 点击各类别中的标签进行选择
+3. **查看选中**: 已选择的标签会在专门区域显示
+4. **生成提示词**: 点击"生成提示词"按钮
+5. **复制使用**: 点击"复制到剪贴板"按钮，即可在AI工具中使用
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🎯 项目特色
+
+- **现代化设计**: 使用渐变背景和毛玻璃效果
+- **流畅动画**: 按钮hover效果和过渡动画
+- **用户体验**: 直观的标签选择和状态反馈
+- **高度可定制**: 易于添加新的提示词类别和标签
+
+## 📄 许可证
+
+MIT License
+
+## 🤝 贡献
+
+欢迎提交 Issues 和 Pull Requests！
+
+---
+
+Made with ❤️ for AI creators
