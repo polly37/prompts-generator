@@ -595,6 +595,28 @@ export default function Home() {
       return
     }
 
+    // 文件大小检查
+    const maxSize = 5 * 1024 * 1024 // 5MB
+    if (currentUpload.file.size > maxSize) {
+      alert('文件大小不能超过 5MB，请选择更小的图片')
+      return
+    }
+
+    // 文件类型检查
+    const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp']
+    if (!allowedTypes.includes(currentUpload.file.type)) {
+      alert('只支持图片格式 (JPEG, PNG, GIF, WebP)')
+      return
+    }
+
+    console.log('开始上传文件:', {
+      fileName: currentUpload.file.name,
+      fileSize: currentUpload.file.size,
+      fileType: currentUpload.file.type,
+      promptLength: currentUpload.prompt.length,
+      userName: userName
+    })
+
     setIsUploading(true)
     
     try {
@@ -604,13 +626,22 @@ export default function Home() {
       formData.append('prompt', currentUpload.prompt)
       formData.append('userName', userName)
       
+      console.log('发送请求到 /api/upload...')
+      
       // 发送到后端
       const response = await fetch('/api/upload', {
         method: 'POST',
         body: formData,
       })
       
+      console.log('收到响应状态:', response.status)
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`)
+      }
+      
       const result = await response.json()
+      console.log('上传结果:', result)
       
       if (result.success) {
         // 上传成功，重新加载帖子列表
@@ -624,11 +655,18 @@ export default function Home() {
         setShowToast(true)
         setTimeout(() => setShowToast(false), 3000)
       } else {
+        console.error('上传失败:', result.message)
         alert(result.message || '上传失败')
       }
     } catch (error) {
-      console.error('上传出错:', error)
-      alert('上传失败，请重试')
+      console.error('上传出错详细信息:', error)
+      if (error instanceof TypeError && error.message.includes('fetch')) {
+        alert('网络连接失败，请检查网络连接后重试')
+      } else if (error instanceof Error && error.message.includes('413')) {
+        alert('文件过大，请选择更小的图片')
+      } else {
+        alert(`上传失败: ${error instanceof Error ? error.message : '未知错误'}`)
+      }
     } finally {
       setIsUploading(false)
     }
